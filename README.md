@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+# 我就带你去飞
 
-You can use the [editor on GitHub](https://github.com/snui/snui.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+###### 喜欢你，喜欢你，我就带你去飞哎噫……哎噫……
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#### [即时感受](/jsgs/)+++[文字作品](/wzzp/)+++[关于](/about/)
 
-### Markdown
+本项目是一个个人博客，以文字为主，因为本站长尚不会在此使用图片、视频以及其他。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### 即时感受
 
-```markdown
-Syntax highlighted code block
+即时感受即即时之感受，忽然、突然、长期思索着的、某一时期感悟等，诸如此类！  
 
-# Header 1
-## Header 2
-### Header 3
+最新的感受：  
 
-- Bulleted
-- List
+2020/11/23：连阴数天，间或零星有几点雨，但是还没有雪。
 
-1. Numbered
-2. List
+2018年之前的可翻看：https://github.com/snui/blog/issues  
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/snui/snui.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
