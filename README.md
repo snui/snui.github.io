@@ -7,7 +7,7 @@
 
 用Typora创建、编辑MD文档，并用其自带的生成Html页面功能生成Html页面，再于github.com上传。绝对静态页面，绝对简单。
 
-### 关于
+### 联络
 
 留言请至：https://github.com/snui/snui.github.io/issues  
   
