@@ -2,14 +2,15 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>即时感受</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+<title>即时感受</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -77,6 +78,7 @@ div.hr:focus { cursor: none; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
 li { margin: 0px; position: relative; }
 blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
@@ -86,7 +88,6 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -100,6 +101,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
 .md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
@@ -150,13 +152,16 @@ table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
-svg[id^="mermaidChart"] { line-height: 1em; }
 mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 @media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
 }
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
 
 
 :root {
@@ -352,24 +357,24 @@ table tr:nth-child(2n),
 thead {
     background-color: #f8f8f8;
 }
-table tr th {
+table th {
     font-weight: bold;
     border: 1px solid #dfe2e5;
     border-bottom: 0;
     margin: 0;
     padding: 6px 13px;
 }
-table tr td {
+table td {
     border: 1px solid #dfe2e5;
     margin: 0;
     padding: 6px 13px;
 }
-table tr th:first-child,
-table tr td:first-child {
+table th:first-child,
+table td:first-child {
     margin-top: 0;
 }
-table tr th:last-child,
-table tr td:last-child {
+table th:last-child,
+table td:last-child {
     margin-bottom: 0;
 }
 
@@ -543,6 +548,6 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export os-windows'>
-<div id='write'  class=''><h1><a name="我就带你去飞httpssnuigithubio" class="md-header-anchor"></a><a href='https://snui.github.io/'><span>我就带你去飞</span></a></h1><h6><a name="喜欢你喜欢你我就带你去飞哎噫哎噫" class="md-header-anchor"></a><span>喜欢你，喜欢你，我就带你去飞哎噫……哎噫……</span></h6><h3><a name="即时感受jsgs--文字作品wzzp--关于about" class="md-header-anchor"></a><a href='/jsgs/'><span>即时感受</span></a><span> &amp; </span><a href='/wzzp/'><span>文字作品</span></a><span> &amp; </span><a href='/about/'><span>关于</span></a></h3><p><span>本项目是一个个人博客，以文字为主。记录此人的一些感悟、事件，以及作品。</span></p><h2><a name="即时感受" class="md-header-anchor"></a><span>即时感受</span></h2><p><span>即时感受即即时之感受，忽然、突然、长期思索着的、某一时期感悟等，诸如此类！  </span></p><p><span>为便于记录和阅读，此处按倒序排列。最新的感受：  </span></p><h4><a name="-20201125" class="md-header-anchor"></a><span>&amp; 2020/11/25：</span></h4><p><span>近年时光过的比较惨。一度觉得人生没有意思，活着不如去死，心中常常像装了铅块，沉重又沉重，压的人不能喘气。</span></p><p><span>于是有意识地想寻“一本真经”，一种能支撑精神的东西，让人能坚持下去。有句话就这样来了：“人类的全部智慧就包含在这两个词里面：等待和希望。”等待吧，希望在前头，尽管有些希望或许是自欺欺人的，但也就认为是希望吧！除此之外，还要找些事做，能带来愉悦的事——写作。</span></p><p><span>之前的几天，寻着早年网络上足迹，一路追索，看见从前的悲欢离合，看见从前的人和事……看见承载这些文字的网站，有的消失，有的还在，那些还在的一一找回密码，但是有的找回了密码竟不能发文章，需要认证，于是再去认证，如此两三回，竟回复说不能证明我是我，这里点一下名——就是某浪博客。我除了觉得更加惨外，没有别的法子。</span></p><p><span>什么地方更坚挺、更能持久呢？费了些心思找了几个地方：</span><a href='http://www.github.com' target='_blank' class='url'>www.github.com</a><span> , </span><a href='http://www.yuque.com' target='_blank' class='url'>www.yuque.com</a><span> , </span><a href='https://blog.csdn.net/'><span>blog.csdn.net</span></a><span> , </span><a href='http://www.cnblogs.com' target='_blank' class='url'>www.cnblogs.com</a><span> , </span><a href='http://www.blogger.com' target='_blank' class='url'>www.blogger.com</a><span> 等。有的有广告，有的是技术社区，有的还需要科学上网。可是论坚挺、持久，或看起来应该能坚挺、持久，也就这些了。所以将这些东西放在这里吧，国外以github.com和blogger.com为主，国内就语雀等地。</span></p><p><span>如此，可以安心写事了。</span></p><h4><a name="-20201123" class="md-header-anchor"></a><span>&amp; 2020/11/23：</span></h4><p><span>连阴数天，间或零星有几点雨，但是还没有雪。就像小便淋漓不断尿不尽一般。这使得人心里有一点馊臭的疑似，不上不下不痛快。总之是不晴朗，不明媚，不下雪，不痛快。</span></p><h4><a name="-再之前" class="md-header-anchor"></a><span>&amp; 再之前</span></h4><p><span>2018年之前的可翻看：</span><a href='https://github.com/snui/blog/issues' target='_blank' class='url'>https://github.com/snui/blog/issues</a><span>  </span></p></div>
+<div id='write'  class=''><h1><a name="我就带你去飞httpssnuigithubio" class="md-header-anchor"></a><a href='https://snui.github.io/'><span>我就带你去飞</span></a></h1><h6><a name="喜欢你喜欢你我就带你去飞哎噫哎噫" class="md-header-anchor"></a><span>喜欢你，喜欢你，我就带你去飞哎噫……哎噫……</span></h6><h5><a name="即时感受jsgs--文字作品wzzp--关于about" class="md-header-anchor"></a><a href='/jsgs/'><span>即时感受</span></a><span> / </span><a href='/wzzp/'><span>文字作品</span></a><span> / </span><a href='/about/'><span>关于</span></a></h5><hr /><h3><a name="即时感受" class="md-header-anchor"></a><span>即时感受</span></h3><p><span>即时感受即即时之感受，忽然、突然、长期思索着的、某一时期感悟等，诸如此类！  </span></p><p><span>为便于记录和阅读，此处按倒序排列。最新的感受：  </span></p><h4><a name="-20201125" class="md-header-anchor"></a><span>&amp; 2020/11/25：</span></h4><p><span>近年时光过的比较惨。一度觉得人生没有意思，活着不如去死，心中常常像装了铅块，沉重又沉重，压的人不能喘气。</span></p><p><span>于是有意识地想寻“一本真经”，一种能支撑精神的东西，让人能坚持下去。有句话就这样来了：“人类的全部智慧就包含在这两个词里面：等待和希望。”等待吧，希望在前头，尽管有些希望或许是自欺欺人的，但也就认为是希望吧！除此之外，还要找些事做，能带来愉悦的事——写作。</span></p><p><span>之前的几天，寻着早年网络上足迹，一路追索，看见从前的悲欢离合，看见从前的人和事……看见承载这些文字的网站，有的消失，有的还在，那些还在的一一找回密码，但是有的找回了密码竟不能发文章，需要认证，于是再去认证，如此两三回，竟回复说不能证明我是我，这里点一下名——就是某浪博客。我除了觉得更加惨外，没有别的法子。</span></p><p><span>什么地方更坚挺、更能持久呢？费了些心思找了几个地方：</span><a href='http://www.github.com' target='_blank' class='url'>www.github.com</a><span> , </span><a href='http://www.yuque.com' target='_blank' class='url'>www.yuque.com</a><span> , </span><a href='https://blog.csdn.net/'><span>blog.csdn.net</span></a><span> , </span><a href='http://www.cnblogs.com' target='_blank' class='url'>www.cnblogs.com</a><span> , </span><a href='http://www.blogger.com' target='_blank' class='url'>www.blogger.com</a><span> 等。有的有广告，有的是技术社区，有的还需要科学上网。可是论坚挺、持久，或看起来应该能坚挺、持久，也就这些了。所以将这些东西放在这里吧，国外以github.com和blogger.com为主，国内就语雀等地。</span></p><p><span>如此，可以安心写事了。</span></p><h4><a name="-20201123" class="md-header-anchor"></a><span>&amp; 2020/11/23：</span></h4><p><span>连阴数天，间或零星有几点雨，但是还没有雪。就像小便淋漓不断尿不尽一般。这使得人心里有一点馊臭的疑似，不上不下不痛快。总之是不晴朗，不明媚，不下雪，不痛快。</span></p><h4><a name="-再之前" class="md-header-anchor"></a><span>&amp; 再之前</span></h4><p><span>2018年之前的可翻看：</span><a href='https://github.com/snui/blog/issues' target='_blank' class='url'>https://github.com/snui/blog/issues</a><span>  </span></p></div>
 </body>
 </html>
